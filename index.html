@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main>
+      <div class="card_container">
+        <div class="main_desktop_con">
+          <img src="images/bg-main-mobile.png" alt="bg" id="bg" />
+
+          <div class="card_img">
+            <img
+              src="images/bg-card-back.png"
+              alt="card-back"
+              class="card-back" />
+            <img
+              src="images/bg-card-front.png"
+              alt="card-front"
+              class="card-front" />
+
+            <div class="details">
+              <p id="cvc">000</p>
+              <img
+                src="images/card-logo.svg"
+                alt="card-logo"
+                class="card-logo" />
+              <p id="card-number">0000 0000 0000 0000</p>
+
+              <div class="names">
+                <p id="name">Jane Appleseed</p>
+
+                <p>
+                  <span id="month">00</span><span>/</span
+                  ><span id="year">00</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="inputs">
+          <form action="/submit-form">
+            <label for="name"> Cardholder Name </label>
+            <input
+              type="text"
+              id="entered-name"
+              placeholder=" e.g. Jane Appleseed"
+              name="name" />
+            <p class="wrong" id="blank_name">Can't be blanked</p>
+
+            <label for="number"> Card Number </label>
+
+            <input
+              type="text"
+              id="entered-number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              name="number" />
+            <p id="wrong_number">Wrong format, numbers only</p>
+            <p class="wrong" id="blanked">Can't be blanked</p>
+
+            <label for="date">
+              Exp. Date (MM/YY) MM YY
+              <span> <label for="cvc">CVC</label></span>
+            </label>
+
+            <div class="flex_input">
+              <input
+                type="number"
+                id="entered-month"
+                placeholder="MM"
+                name="date" />
+
+              <input
+                type="number"
+                id="entered-year"
+                placeholder="YY"
+                name="date" />
+
+              <input
+                type="number"
+                placeholder=" e.g. 123"
+                name="cvc"
+                id="entered-cvc" />
+            </div>
+            <div class="wrong_input">
+              <p class="wrong" id="blanked">Can't be blanked</p>
+              <p class="wrong" id="blankedcvc">Can't be blanked</p>
+            </div>
+          </form>
+          <div class="button">
+            <button type="submit" id="confirm">Confirm</button>
+          </div>
+        </div>
+
+        <!-- Completed state start-->
+        <div id="complete_con">
+          <div class="complete_icon">
+            <img src="images/icon-complete.svg" alt="complete_icon" />
+          </div>
+
+          <h1>Thank you!</h1>
+          <p class="completed">We've added your card details</p>
+          <button type="submit" id="continue">Continue</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+  --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --Red: hsl(0, 100%, 66%);
+}
+
+/*main styling*/
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 1.1rem;
+}
+
+.card_container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#bg {
+  min-width: 370px;
+}
+
+.card_img {
+  position: absolute;
+  top: 35px;
+  left: 20px;
+}
+
+.card-back,
+.card-front {
+  width: 280px;
+}
+
+.card-back {
+  margin-left: 60px;
+}
+
+.card-front {
+  position: absolute;
+  top: 87px;
+}
+
+.details {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 90px;
+  padding: 15px;
+  gap: 1rem;
+}
+
+#cvc {
+  position: absolute;
+  bottom: 150px;
+  font-size: 0.6rem;
+  right: -25px;
+}
+
+.names {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  display: flex;
+  gap: 8.5rem;
+}
+
+.card-logo {
+  width: 53px;
+  margin-bottom: 30px;
+}
+
+#card-number {
+  font-size: 1.1rem;
+  letter-spacing: 0.25rem;
+  line-height: 0.5;
+  text-align: center;
+}
+
+#inputs {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 150px;
+}
+
+#complete_con {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 90px;
+  gap: 1rem;
+}
+
+.completed {
+  color: var(--Dark-grayish-violet);
+}
+
+#continue {
+  color: var(--White);
+  background-color: var(--Very-dark-violet);
+  padding: 15px;
+  width: 350px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 0.5rem;
+}
+
+input {
+  font-size: 1rem;
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+input:hover {
+  cursor: pointer;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to right hsl(249, 99%, 64%), hsl(278, 94%, 30%))
+    1;
+}
+
+.flex_input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.flex_input > input {
+  width: 85px;
+}
+
+#entered-cvc {
+  width: 150px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.wrong_input {
+  display: flex;
+  gap: 6rem;
+}
+
+.wrong {
+  display: none;
+  color: var(--Red);
+  font-size: 0.7rem;
+}
+
+#wrong_number {
+  display: none;
+  color: var(--Red);
+  font-size: 0.7rem;
+}
+
+#blanked {
+  display: none;
+  color: var(--Red);
+  font-size: 0.7rem;
+}
+
+#blank_name {
+  display: none;
+  color: var(--Red);
+  font-size: 0.7rem;
+}
+
+#blankedcvc {
+  display: none;
+  color: var(--Red);
+  font-size: 0.7rem;
+}
+
+#entered-name.error {
+  border: 1px solid var(--Red);
+}
+
+#entered-number.error {
+  border: 1px solid var(--Red);
+}
+
+#entered-month.error {
+  border: 1px solid var(--Red);
+}
+
+#entered-year.error {
+  border: 1px solid var(--Red);
+}
+
+#entered-cvc.error {
+  border: 1px solid var(--Red);
+}
+
+#confirm {
+  color: var(--White);
+  background-color: var(--Very-dark-violet);
+  padding: 15px;
+  width: 350px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (min-width: 900px) {
+  .card_container {
+    justify-content: start;
+    flex-direction: row;
+    gap: 20rem;
+  }
+
+  #bg {
+    width: 200px;
+  }
+
+  .inputs {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .details {
+    top: -20px;
+  }
+
+  .card-logo {
+    width: 60px;
+    margin-bottom: 55px;
+  }
+
+  #card-number {
+    line-height: 0.7;
+    font-size: 1.5rem;
+  }
+
+  .names {
+    font-size: 0.7rem;
+    gap: 12rem;
+  }
+
+  #cvc {
+    right: -40px;
+    bottom: -70px;
+  }
+
+  .card_img {
+    top: 150px;
+    left: 150px;
+  }
+
+  .card-back,
+  .card-front {
+    width: 350px;
+  }
+
+  .card-back {
+    margin-top: 190px;
+    margin-left: 60px;
+  }
+
+  .card-front {
+    position: absolute;
+    top: -20px;
+  }
+}
